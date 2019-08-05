@@ -18,6 +18,9 @@ var GameApp = (function () {
         this._clientScale = 1;
         var url = location.href;
         this.isNoLogin = true;
+        // 初始化场景
+        this._sceneRoot = new SceneRoot(this);
+        Laya.stage.addChild(this._sceneRoot);
         // 初始化ui
         this._uiRoot = new UIRoot(this);
         Laya.stage.addChild(this._uiRoot);
@@ -49,6 +52,13 @@ var GameApp = (function () {
     Object.defineProperty(GameApp.prototype, "uiRoot", {
         get: function () {
             return this._uiRoot;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GameApp.prototype, "sceneRoot", {
+        get: function () {
+            return this._sceneRoot;
         },
         enumerable: true,
         configurable: true

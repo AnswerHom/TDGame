@@ -18,10 +18,14 @@ import Page = td.gui.base.Page;
 
 import Path = td.Path;
 import UIRoot = td.UIRoot;
+import SceneRoot = td.SceneRoot;
 import PageDef = tb.gui.page.PageDef;
 import BlackBorder = td.BlackBorder;
 import StringU = td.utils.StringU;
+import MathU = td.utils.MathU;
 import ObjectPools = td.utils.ObjectPools;
+
+import BaseCat = td.object.BaseCat;
 
 var onIPhoneX: boolean = false;
 var isDebug: boolean = true;

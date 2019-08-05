@@ -33,6 +33,11 @@ class GameApp {
     get uiRoot(): UIRoot {
         return this._uiRoot;
     }
+    // ui
+    protected _sceneRoot: SceneRoot;
+    get sceneRoot(): SceneRoot {
+        return this._sceneRoot;
+    }
 
 
     private _blackBorder: BlackBorder;
@@ -44,6 +49,9 @@ class GameApp {
         let url = location.href;
         this.isNoLogin = true;
 
+        // 初始化场景
+        this._sceneRoot = new SceneRoot(this);
+        Laya.stage.addChild(this._sceneRoot);
         // 初始化ui
         this._uiRoot = new UIRoot(this);
         Laya.stage.addChild(this._uiRoot);

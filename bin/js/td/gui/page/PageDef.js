@@ -13,6 +13,7 @@ var tb;
                 PageDef.init = function () {
                     PageDef._pageClassMap[PageDef.LOAD] = page.Load;
                     PageDef._pageClassMap[PageDef.HUD] = page.HudPage;
+                    PageDef._pageClassMap[PageDef.SCENE_HUD] = page.SceneHudPage;
                 };
                 PageDef.getPageClass = function (key) {
                     return PageDef._pageClassMap[key];
@@ -23,6 +24,8 @@ var tb;
             PageDef.LOAD = 0;
             /**HUD界面 */
             PageDef.HUD = 1;
+            /**SCENE HUD界面 */
+            PageDef.SCENE_HUD = 2;
             //页面集合
             PageDef._pageClassMap = {};
             page.PageDef = PageDef;

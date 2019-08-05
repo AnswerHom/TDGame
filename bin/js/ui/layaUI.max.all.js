@@ -7,6 +7,24 @@ var View = laya.ui.View;
 var Dialog = laya.ui.Dialog;
 var ui;
 (function (ui) {
+    var component;
+    (function (component) {
+        var SceneCatUI = (function (_super) {
+            __extends(SceneCatUI, _super);
+            function SceneCatUI() {
+                return _super.call(this) || this;
+            }
+            SceneCatUI.prototype.createChildren = function () {
+                _super.prototype.createChildren.call(this);
+                this.createView(ui.component.SceneCatUI.uiView);
+            };
+            return SceneCatUI;
+        }(View));
+        SceneCatUI.uiView = { "type": "View", "props": { "width": 100, "height": 100 }, "child": [{ "type": "Image", "props": { "var": "image_Cat", "skin": "cat/cat1.png", "centerX": 0, "bottom": 0 } }] };
+        component.SceneCatUI = SceneCatUI;
+    })(component = ui.component || (ui.component = {}));
+})(ui || (ui = {}));
+(function (ui) {
     var HudUI = (function (_super) {
         __extends(HudUI, _super);
         function HudUI() {
@@ -35,5 +53,21 @@ var ui;
     }(View));
     LoadUI.uiView = { "type": "View", "props": { "width": 1280, "height": 720 }, "child": [{ "type": "Rect", "props": { "width": 1280, "lineWidth": 1, "height": 720, "fillColor": "#ffffff" } }, { "type": "ProgressBar", "props": { "y": 635, "width": 827, "var": "progress_JD", "value": 0, "skin": "load/progress_02.png", "sizeGrid": "7,16,8,16", "height": 20, "centerX": 0 }, "child": [{ "type": "Label", "props": { "y": -30, "width": 134, "var": "label_JD", "text": "5%", "height": 31, "fontSize": 30, "font": "SimHei", "color": "#000000", "centerX": 0, "bold": true, "align": "center" } }] }] };
     ui.LoadUI = LoadUI;
+})(ui || (ui = {}));
+(function (ui) {
+    var Scene1UI = (function (_super) {
+        __extends(Scene1UI, _super);
+        function Scene1UI() {
+            return _super.call(this) || this;
+        }
+        Scene1UI.prototype.createChildren = function () {
+            View.regComponent("ui.component.SceneCatUI", ui.component.SceneCatUI);
+            _super.prototype.createChildren.call(this);
+            this.createView(ui.Scene1UI.uiView);
+        };
+        return Scene1UI;
+    }(View));
+    Scene1UI.uiView = { "type": "View", "props": { "width": 1280, "height": 720 }, "child": [{ "type": "Box", "props": { "y": 0.5, "x": 0.5, "var": "box_BG" }, "child": [{ "type": "Line", "props": { "y": 600, "x": 0, "toY": 0, "toX": 1280, "lineWidth": 5, "lineColor": "#ff0000" } }, { "type": "Line", "props": { "y": 100, "x": 0, "toY": 0, "toX": 1280, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 200, "x": 0, "toY": 0, "toX": 1280, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 300, "x": 0, "toY": 0, "toX": 1280, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 400, "x": 0, "toY": 0, "toX": 1280, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 500, "x": 0, "toY": 0, "toX": 1280, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 40, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 1240, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 149, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 258, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 367, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 476, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 585, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 695, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 804, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 913, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 1022, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 1131, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }] }, { "type": "SceneCat", "props": { "y": 619, "x": 28, "var": "view_Cat", "runtime": "ui.component.SceneCatUI" } }] };
+    ui.Scene1UI = Scene1UI;
 })(ui || (ui = {}));
 //# sourceMappingURL=layaUI.max.all.js.map
