@@ -23,7 +23,7 @@ module tb.gui.page {
         protected onOpen(): void {
             super.onOpen();
             this._viewUI.progress_JD.value = 0;
-            Laya.Tween.to(this._viewUI.progress_JD, { value: 1, update: Handler.create(this, this.updateJD, null, false) }, 1000);
+            Laya.Tween.to(this._viewUI.progress_JD, { value: 1, update: Handler.create(this, this.updateJD, null, false) }, 1000, null, Handler.create(this, this.close, null, false));
         }
 
         private updateJD(): void {
@@ -31,7 +31,8 @@ module tb.gui.page {
         }
 
         close(): void {
-
+            Laya.Tween.clearAll(this._viewUI.progress_JD);
+            super.close();
         }
     }
 }

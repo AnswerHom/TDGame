@@ -7,6 +7,21 @@ var View = laya.ui.View;
 var Dialog = laya.ui.Dialog;
 var ui;
 (function (ui) {
+    var HudUI = (function (_super) {
+        __extends(HudUI, _super);
+        function HudUI() {
+            return _super.call(this) || this;
+        }
+        HudUI.prototype.createChildren = function () {
+            _super.prototype.createChildren.call(this);
+            this.createView(ui.HudUI.uiView);
+        };
+        return HudUI;
+    }(View));
+    HudUI.uiView = { "type": "View", "props": { "width": 1280, "height": 720 }, "child": [{ "type": "Image", "props": { "y": 0, "x": 0, "width": 1280, "skin": "hud/di_pfdk.png", "sizeGrid": "50,50,50,50", "height": 720 } }, { "type": "Image", "props": { "x": 0, "width": 1280, "var": "image_Top", "top": 0, "skin": "hud/tu_tk.png", "sizeGrid": "0,500,0,500" } }, { "type": "Image", "props": { "x": 0, "width": 1280, "var": "image_Bottom", "skin": "hud/tu_tbd.png", "sizeGrid": "0,63,0,201", "bottom": 0 } }, { "type": "Button", "props": { "var": "btn_Start", "stateNum": 1, "skin": "hud/btn_001.png", "labelSize": 35, "labelFont": "SimHei", "labelColors": "#6b4b35", "label": "游戏开始", "centerX": 0, "bottom": 113 } }] };
+    ui.HudUI = HudUI;
+})(ui || (ui = {}));
+(function (ui) {
     var LoadUI = (function (_super) {
         __extends(LoadUI, _super);
         function LoadUI() {

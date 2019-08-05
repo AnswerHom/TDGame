@@ -106,7 +106,9 @@ var Launch = (function () {
         var app = new GameApp();
         app.pageVisibility = "***";
         //打开加载界面
-        app.uiRoot.general.open(PageDef.LOAD);
+        app.uiRoot.general.open(PageDef.LOAD, null, function () {
+            app.uiRoot.HUD.open(PageDef.HUD);
+        });
         this._apps.push(app);
         Laya.stage.on(LEvent.RESIZE, this, this.onResize);
         this.onResize();

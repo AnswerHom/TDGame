@@ -1,4 +1,13 @@
 D .
+D hud
+P E204D4CA btn_001.png
+P E47E17B3 btn_002.png
+P 1A227B0B di_pfdk.png
+P A6F642E0 tu_pb2.png
+R D89F9D28 tu_tbd.png
+R 54AC8D6C tu_tk.png
+P A6FEA5AA tu_yb.png
+P 82C2AFD4 tu_yb3.png
 D load
 P 66914C6D progress_02$bar.png
 P 9D174F82 progress_02.png

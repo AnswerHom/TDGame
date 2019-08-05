@@ -31,12 +31,14 @@ var tb;
                 Load.prototype.onOpen = function () {
                     _super.prototype.onOpen.call(this);
                     this._viewUI.progress_JD.value = 0;
-                    Laya.Tween.to(this._viewUI.progress_JD, { value: 1, update: Handler.create(this, this.updateJD, null, false) }, 1000);
+                    Laya.Tween.to(this._viewUI.progress_JD, { value: 1, update: Handler.create(this, this.updateJD, null, false) }, 1000, null, Handler.create(this, this.close, null, false));
                 };
                 Load.prototype.updateJD = function () {
                     this._viewUI.label_JD.text = Math.floor(this._viewUI.progress_JD.value * 100) + "%";
                 };
                 Load.prototype.close = function () {
+                    Laya.Tween.clearAll(this._viewUI.progress_JD);
+                    _super.prototype.close.call(this);
                 };
                 return Load;
             }(td.gui.base.Page));

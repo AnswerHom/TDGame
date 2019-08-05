@@ -12,6 +12,7 @@ var tb;
                 }
                 PageDef.init = function () {
                     PageDef._pageClassMap[PageDef.LOAD] = page.Load;
+                    PageDef._pageClassMap[PageDef.HUD] = page.HudPage;
                 };
                 PageDef.getPageClass = function (key) {
                     return PageDef._pageClassMap[key];
@@ -20,6 +21,8 @@ var tb;
             }());
             /**加载界面 */
             PageDef.LOAD = 0;
+            /**HUD界面 */
+            PageDef.HUD = 1;
             //页面集合
             PageDef._pageClassMap = {};
             page.PageDef = PageDef;
