@@ -7,7 +7,7 @@ var td;
     (function (gui) {
         var component;
         (function (component) {
-            var TweenBtnEff = /** @class */ (function () {
+            var TweenBtnEff = (function () {
                 function TweenBtnEff() {
                 }
                 /**

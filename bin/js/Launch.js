@@ -22,7 +22,7 @@ var StringU = td.utils.StringU;
 var ObjectPools = td.utils.ObjectPools;
 var onIPhoneX = false;
 var isDebug = true;
-var Launch = /** @class */ (function () {
+var Launch = (function () {
     function Launch() {
         // 浏览器可视高宽（在设备上的像素高宽）
         this._designWidth = 0;
@@ -171,10 +171,10 @@ var Launch = /** @class */ (function () {
             this._clientHeight = Launch.widthDesginPixelw * (this._designHeight / this._designWidth);
         }
     };
-    // 美术设计画布像素高宽
-    Launch.widthDesginPixelw = 1280;
-    Launch.heightDesginPixelw = 720;
     return Launch;
 }());
+// 美术设计画布像素高宽
+Launch.widthDesginPixelw = 1280;
+Launch.heightDesginPixelw = 720;
 new Launch();
 //# sourceMappingURL=Launch.js.map

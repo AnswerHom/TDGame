@@ -5,7 +5,7 @@ var td;
 (function (td) {
     var utils;
     (function (utils) {
-        var DisplayU = /** @class */ (function () {
+        var DisplayU = (function () {
             function DisplayU() {
             }
             /**设置鼠标事件*/
@@ -86,7 +86,7 @@ var td;
                     comp.centerX = props.centerX; //中心线距离x
                 if (props.hasOwnProperty("centerY"))
                     comp.centerY = props.centerY; //中心线距离y
-                if (props.hasOwnProperty("parent")) { //父级
+                if (props.hasOwnProperty("parent")) {
                     if (!props.hasOwnProperty("index"))
                         props.parent.addChild(comp); //深度
                     else
@@ -122,7 +122,7 @@ var td;
                     scroll = target.vScrollBar;
                 if (!scroll || !scroll.isVertical)
                     return;
-                if (scroll.min == scroll.max) { //不足一屏
+                if (scroll.min == scroll.max) {
                     if (type == DisplayU.MASK_TYPE_INIT)
                         this.drawMaskByType(target, DisplayU.MASK_KIND_ALL);
                     return;
@@ -167,18 +167,18 @@ var td;
                 var graphics = mask.graphics;
                 graphics.clear();
                 switch (kind) {
-                    case DisplayU.MASK_KIND_ALL: //全遮罩:不足一屏
+                    case DisplayU.MASK_KIND_ALL:
                         graphics.fillTexture(DisplayU.MASK_IMG_MIDDLE.source, 0, 0, mask.width, mask.height, "repeat");
                         break;
-                    case DisplayU.MASK_KIND_TOP: //上边
+                    case DisplayU.MASK_KIND_TOP:
                         graphics.fillTexture(DisplayU.MASK_IMG_MIDDLE.source, 0, 0, mask.width, mask.height - height, "repeat");
                         graphics.fillTexture(DisplayU.MASK_IMG_BOTTOM.source, 0, mask.height - height, mask.width, height, "repeat-x");
                         break;
-                    case DisplayU.MASK_KIND_BOTTOM: //下边
+                    case DisplayU.MASK_KIND_BOTTOM:
                         graphics.fillTexture(DisplayU.MASK_IMG_TOP.source, 0, 0, mask.width, height, "repeat-x");
                         graphics.fillTexture(DisplayU.MASK_IMG_MIDDLE.source, 0, height, mask.width, mask.height - height, "repeat");
                         break;
-                    case DisplayU.MASK_KIND_MIDDLE: //中间
+                    case DisplayU.MASK_KIND_MIDDLE:
                         graphics.fillTexture(DisplayU.MASK_IMG_TOP.source, 0, 0, mask.width, height, "repeat-x");
                         graphics.fillTexture(DisplayU.MASK_IMG_MIDDLE.source, 0, height, mask.width, mask.height - 2 * height, "repeat");
                         graphics.fillTexture(DisplayU.MASK_IMG_BOTTOM.source, 0, mask.height - height, mask.width, height, "repeat-x");
@@ -206,7 +206,7 @@ var td;
                     scroll = target.hScrollBar;
                 if (!scroll || scroll.isVertical)
                     return;
-                if (scroll.min == scroll.max) { //不足一屏
+                if (scroll.min == scroll.max) {
                     if (type == DisplayU.MASK_TYPE_INIT)
                         this.drawHMaskByType(target, DisplayU.MASK_KIND_ALL);
                     return;
@@ -252,18 +252,18 @@ var td;
                 graphics.clear();
                 console.log("drawHMaskByType", kind);
                 switch (kind) {
-                    case DisplayU.MASK_KIND_ALL: //全遮罩:不足一屏
+                    case DisplayU.MASK_KIND_ALL:
                         graphics.fillTexture(DisplayU.MASK_IMG_MIDDLE.source, 0, 0, mask.width, mask.height, "repeat");
                         break;
-                    case DisplayU.MASK_KIND_LEFT: //左边
+                    case DisplayU.MASK_KIND_LEFT:
                         graphics.fillTexture(DisplayU.MASK_IMG_MIDDLE.source, 0, 0, mask.width - width, mask.height, "repeat");
                         graphics.fillTexture(DisplayU.MASK_IMG_RIGHT.source, mask.width - width, 0, width, mask.height, "repeat-y");
                         break;
-                    case DisplayU.MASK_KIND_RIGHT: //右边
+                    case DisplayU.MASK_KIND_RIGHT:
                         graphics.fillTexture(DisplayU.MASK_IMG_LEFT.source, 0, 0, width, mask.height, "repeat-y");
                         graphics.fillTexture(DisplayU.MASK_IMG_MIDDLE.source, width, 0, mask.width - width, mask.height, "repeat");
                         break;
-                    case DisplayU.MASK_KIND_MIDDLE: //中间
+                    case DisplayU.MASK_KIND_MIDDLE:
                         graphics.fillTexture(DisplayU.MASK_IMG_LEFT.source, 0, 0, width, mask.height, "repeat-y");
                         graphics.fillTexture(DisplayU.MASK_IMG_MIDDLE.source, width, 0, mask.width - 2 * width, mask.height, "repeat");
                         graphics.fillTexture(DisplayU.MASK_IMG_RIGHT.source, mask.width - width, 0, width, mask.height, "repeat-y");
@@ -271,21 +271,21 @@ var td;
                 }
                 DisplayU.MASK_DICT[key].kind = kind;
             };
-            /*============================垂直滚动条遮罩相关================================*/
-            DisplayU.MASK_TYPE_NULL = 0; //清理遮罩
-            DisplayU.MASK_TYPE_INIT = 1; //初始化遮罩
-            DisplayU.MASK_TYPE_NORMAL = 2; //更新遮罩
-            DisplayU.MASK_KIND_NULL = 0; //空遮罩
-            DisplayU.MASK_KIND_ALL = 1; //全遮罩
-            DisplayU.MASK_KIND_TOP = 2; //上遮罩
-            DisplayU.MASK_KIND_BOTTOM = 3; //下遮罩
-            DisplayU.MASK_KIND_MIDDLE = 4; //中遮罩
-            DisplayU.MASK_KIND_LEFT = 5; //左遮罩
-            DisplayU.MASK_KIND_RIGHT = 6; //右遮罩
-            DisplayU.MASK_WIDTH = 56; //遮罩图片宽度
-            DisplayU.MASK_HEIGHT = 56; //遮罩图片高度
             return DisplayU;
         }());
+        /*============================垂直滚动条遮罩相关================================*/
+        DisplayU.MASK_TYPE_NULL = 0; //清理遮罩
+        DisplayU.MASK_TYPE_INIT = 1; //初始化遮罩
+        DisplayU.MASK_TYPE_NORMAL = 2; //更新遮罩
+        DisplayU.MASK_KIND_NULL = 0; //空遮罩
+        DisplayU.MASK_KIND_ALL = 1; //全遮罩
+        DisplayU.MASK_KIND_TOP = 2; //上遮罩
+        DisplayU.MASK_KIND_BOTTOM = 3; //下遮罩
+        DisplayU.MASK_KIND_MIDDLE = 4; //中遮罩
+        DisplayU.MASK_KIND_LEFT = 5; //左遮罩
+        DisplayU.MASK_KIND_RIGHT = 6; //右遮罩
+        DisplayU.MASK_WIDTH = 56; //遮罩图片宽度
+        DisplayU.MASK_HEIGHT = 56; //遮罩图片高度
         utils.DisplayU = DisplayU;
     })(utils = td.utils || (td.utils = {}));
 })(td || (td = {}));

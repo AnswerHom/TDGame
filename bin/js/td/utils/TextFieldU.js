@@ -6,7 +6,7 @@ var td;
     var utils;
     (function (utils) {
         var HTMLDivElement = laya.html.dom.HTMLDivElement;
-        var TextFieldU = /** @class */ (function () {
+        var TextFieldU = (function () {
             function TextFieldU() {
             }
             /**

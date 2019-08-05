@@ -1,22 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 /**
 * UI
 */
 var td;
 (function (td) {
-    var UIRoot = /** @class */ (function (_super) {
+    var UIRoot = (function (_super) {
         __extends(UIRoot, _super);
         function UIRoot(app) {
             var _this = _super.call(this, app) || this;
@@ -132,28 +124,28 @@ var td;
         UIRoot.prototype.onKeyESC = function () {
             !this._topUI.cancel() && this._generalUI.cancel();
         };
-        //UI模式
-        UIRoot.MODE_PC = 0; //PC模式
-        UIRoot.MODE_HORIZONTAL = 1; //横屏模式
-        UIRoot.MODE_VERTICAL = 2; //竖屏模式
-        //热键枚举
-        UIRoot.KEYCODE_A = 65; //A键
-        UIRoot.KEYCODE_Q = 81; //Q键
-        UIRoot.KEYCODE_Z = 90; //Z键
-        UIRoot.KEYCODE_V = 86; //V键
-        UIRoot.KEYCODE_ESC = 27; //eac键
-        UIRoot.KEYCODE_M = 77; //M键
-        UIRoot.KEYCODE_SPAPCE = 32; //Space键
-        UIRoot.KEYCODE_TAB = 9; //Tab键
-        UIRoot.KEYCODE_ENTER = 13; //enter键
-        UIRoot.KEYCODE_UP = 38; //↑
-        UIRoot.KEYCODE_DOWN = 40; //↓
-        UIRoot.KEYCODE_LEFT = 37; //←
-        UIRoot.KEYCODE_RIGHT = 39; //→
-        // 初始化事件
-        UIRoot.INIT = 'init';
         return UIRoot;
     }(td.gui.base.Container));
+    //UI模式
+    UIRoot.MODE_PC = 0; //PC模式
+    UIRoot.MODE_HORIZONTAL = 1; //横屏模式
+    UIRoot.MODE_VERTICAL = 2; //竖屏模式
+    //热键枚举
+    UIRoot.KEYCODE_A = 65; //A键
+    UIRoot.KEYCODE_Q = 81; //Q键
+    UIRoot.KEYCODE_Z = 90; //Z键
+    UIRoot.KEYCODE_V = 86; //V键
+    UIRoot.KEYCODE_ESC = 27; //eac键
+    UIRoot.KEYCODE_M = 77; //M键
+    UIRoot.KEYCODE_SPAPCE = 32; //Space键
+    UIRoot.KEYCODE_TAB = 9; //Tab键
+    UIRoot.KEYCODE_ENTER = 13; //enter键
+    UIRoot.KEYCODE_UP = 38; //↑
+    UIRoot.KEYCODE_DOWN = 40; //↓
+    UIRoot.KEYCODE_LEFT = 37; //←
+    UIRoot.KEYCODE_RIGHT = 39; //→
+    // 初始化事件
+    UIRoot.INIT = 'init';
     td.UIRoot = UIRoot;
 })(td || (td = {}));
 //# sourceMappingURL=UIRoot.js.map

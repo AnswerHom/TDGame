@@ -5,7 +5,7 @@ var td;
 (function (td) {
     var utils;
     (function (utils) {
-        var MathU = /** @class */ (function () {
+        var MathU = (function () {
             function MathU() {
             }
             /**
@@ -160,10 +160,10 @@ var td;
                 var t = Math.round(e).toString(16);
                 return 1 == t.length ? "0" + t : t;
             };
-            //最大朝向
-            MathU.kTowardCount = 8;
             return MathU;
         }());
+        //最大朝向
+        MathU.kTowardCount = 8;
         utils.MathU = MathU;
     })(utils = td.utils || (td.utils = {}));
 })(td || (td = {}));

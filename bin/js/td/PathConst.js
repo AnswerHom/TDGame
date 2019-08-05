@@ -3,7 +3,7 @@
 */
 var td;
 (function (td) {
-    var Path = /** @class */ (function () {
+    var Path = (function () {
         function Path() {
         }
         /**
@@ -27,23 +27,23 @@ var td;
                 }
             return paths;
         };
-        Path.template = 'scene/template/';
-        Path.uiAtlas = "res/atlas/";
-        Path.sfAtlas = "res/atlas/sf/";
-        Path.ui = "ui/";
-        Path.resource3D = "scene/3d/";
-        Path.sound = 'scene/sound/';
-        Path.scene_path = Path.resource3D + "LayaScene_baiwanyinyangshi/";
-        Path.skin_path = Path.resource3D + "LayaScene_M{0}/M{0}.lh";
-        Path.scene = Path.scene_path + "baiwanyinyangshi.ls";
-        Path.scene_model = Path.scene_path + "Assets/yeyouji/model/";
-        Path.scene_texture = Path.scene_path + "Assets/yeyouji/model/Materials/";
-        Path.name_texture = Path.scene_path + "Assets/AINames/";
-        Path.icon = "scene/icon/";
-        Path.custom_atlas = "effect_xl/custom_atlas/";
-        Path.mathSprite3D = Path.resource3D + "LayaScene_math/math.lh";
         return Path;
     }());
+    Path.template = 'scene/template/';
+    Path.uiAtlas = "res/atlas/";
+    Path.sfAtlas = "res/atlas/sf/";
+    Path.ui = "ui/";
+    Path.resource3D = "scene/3d/";
+    Path.sound = 'scene/sound/';
+    Path.scene_path = Path.resource3D + "LayaScene_baiwanyinyangshi/";
+    Path.skin_path = Path.resource3D + "LayaScene_M{0}/M{0}.lh";
+    Path.scene = Path.scene_path + "baiwanyinyangshi.ls";
+    Path.scene_model = Path.scene_path + "Assets/yeyouji/model/";
+    Path.scene_texture = Path.scene_path + "Assets/yeyouji/model/Materials/";
+    Path.name_texture = Path.scene_path + "Assets/AINames/";
+    Path.icon = "scene/icon/";
+    Path.custom_atlas = "effect_xl/custom_atlas/";
+    Path.mathSprite3D = Path.resource3D + "LayaScene_math/math.lh";
     td.Path = Path;
 })(td || (td = {}));
 //# sourceMappingURL=PathConst.js.map

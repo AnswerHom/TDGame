@@ -9,7 +9,7 @@ var td;
         var kTowardCount = 8;
         //极小值
         var EPSINON = 0.000001;
-        var Vector2 = /** @class */ (function () {
+        var Vector2 = (function () {
             function Vector2(x, y) {
                 this.x = x ? x : 0;
                 this.y = y ? y : 0;
@@ -137,11 +137,11 @@ var td;
             Vector2.prototype.clone = function () {
                 return new Vector2(this.x, this.y);
             };
-            Vector2.zero = new Vector2(0, 0);
-            Vector2.temp = new Vector2(0, 0);
-            Vector2.vec2 = new Vector2();
             return Vector2;
         }());
+        Vector2.zero = new Vector2(0, 0);
+        Vector2.temp = new Vector2(0, 0);
+        Vector2.vec2 = new Vector2();
         utils.Vector2 = Vector2;
     })(utils = td.utils || (td.utils = {}));
 })(td || (td = {}));

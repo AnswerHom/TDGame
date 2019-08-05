@@ -5,7 +5,7 @@ var td;
 (function (td) {
     var utils;
     (function (utils) {
-        var ObjectPools = /** @class */ (function () {
+        var ObjectPools = (function () {
             function ObjectPools() {
             }
             /**
@@ -97,24 +97,24 @@ var td;
                     this._pools[key].adaptSize();
                 }
             };
-            // 调试时的严格模式
-            ObjectPools.MOLD_DEBUG_STRICT = 0;
-            // 发布时的防错模式
-            ObjectPools.MOLD_RELEASE_FAIL_SAFE = 1;
-            // 模式
-            ObjectPools.mold = ObjectPools.MOLD_RELEASE_FAIL_SAFE;
-            /** 对象池*/
-            ObjectPools._pools = {};
-            /**距离下次检查的时间*/
-            ObjectPools._nextUpdateTime = 0;
             return ObjectPools;
         }());
+        // 调试时的严格模式
+        ObjectPools.MOLD_DEBUG_STRICT = 0;
+        // 发布时的防错模式
+        ObjectPools.MOLD_RELEASE_FAIL_SAFE = 1;
+        // 模式
+        ObjectPools.mold = ObjectPools.MOLD_RELEASE_FAIL_SAFE;
+        /** 对象池*/
+        ObjectPools._pools = {};
+        /**距离下次检查的时间*/
+        ObjectPools._nextUpdateTime = 0;
         utils.ObjectPools = ObjectPools;
         /**
          * 池
          * @author wy
          */
-        var Pool = /** @class */ (function () {
+        var Pool = (function () {
             function Pool(key) {
                 /**池*/
                 this._list = [];

@@ -5,7 +5,7 @@ var td;
 (function (td) {
     var utils;
     (function (utils) {
-        var StringU = /** @class */ (function () {
+        var StringU = (function () {
             function StringU() {
             }
             StringU.substitute = function (str) {
@@ -192,51 +192,51 @@ var td;
                 }
                 return text;
             };
-            StringU.StringUnits = [
-                "",
-                "k",
-                "m",
-                "b",
-                "t",
-                "q",
-                "Q",
-                "u",
-                "U",
-                "s",
-                "S",
-                "p",
-                "P",
-                "o",
-                "O",
-                "n",
-                "N",
-                "d",
-                "D",
-                "g",
-                "G",
-                "h",
-                "H",
-                "l",
-                "L",
-                "i",
-                "I",
-                "j",
-                "J",
-                "n",
-                "N",
-                "c",
-                "C",
-                "x",
-                "X",
-                "w",
-                "W",
-                "y",
-                "Y",
-                "z",
-                "Z"
-            ];
             return StringU;
         }());
+        StringU.StringUnits = [
+            "",
+            "k",
+            "m",
+            "b",
+            "t",
+            "q",
+            "Q",
+            "u",
+            "U",
+            "s",
+            "S",
+            "p",
+            "P",
+            "o",
+            "O",
+            "n",
+            "N",
+            "d",
+            "D",
+            "g",
+            "G",
+            "h",
+            "H",
+            "l",
+            "L",
+            "i",
+            "I",
+            "j",
+            "J",
+            "n",
+            "N",
+            "c",
+            "C",
+            "x",
+            "X",
+            "w",
+            "W",
+            "y",
+            "Y",
+            "z",
+            "Z"
+        ];
         utils.StringU = StringU;
     })(utils = td.utils || (td.utils = {}));
 })(td || (td = {}));

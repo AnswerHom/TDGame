@@ -7,7 +7,7 @@ var tb;
     (function (gui) {
         var page;
         (function (page) {
-            var PageDef = /** @class */ (function () {
+            var PageDef = (function () {
                 function PageDef() {
                 }
                 PageDef.init = function () {
@@ -16,12 +16,12 @@ var tb;
                 PageDef.getPageClass = function (key) {
                     return PageDef._pageClassMap[key];
                 };
-                /**加载界面 */
-                PageDef.LOAD = 0;
-                //页面集合
-                PageDef._pageClassMap = {};
                 return PageDef;
             }());
+            /**加载界面 */
+            PageDef.LOAD = 0;
+            //页面集合
+            PageDef._pageClassMap = {};
             page.PageDef = PageDef;
         })(page = gui.page || (gui.page = {}));
     })(gui = tb.gui || (tb.gui = {}));

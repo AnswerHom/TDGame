@@ -7,7 +7,7 @@ var td;
     (function (gui) {
         var base;
         (function (base) {
-            var TabBox = /** @class */ (function () {
+            var TabBox = (function () {
                 function TabBox(app, view, tabView, isNeedMask) {
                     if (isNeedMask === void 0) { isNeedMask = true; }
                     this.isMove = false;
@@ -54,8 +54,6 @@ var td;
                     if (this._tabView) {
                         if (this._tween)
                             this._tween.clear();
-                        // this._tabView.alpha = 1;
-                        // this._point && this._tabView.pos(this._point.x,this._point.y);
                     }
                     this.isOpened = false;
                 };

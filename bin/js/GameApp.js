@@ -3,7 +3,7 @@
 */
 // 是否iphoneX
 var onIPhoneX = false;
-var GameApp = /** @class */ (function () {
+var GameApp = (function () {
     function GameApp() {
         this.isNoLogin = false;
         this.mutedMusic = false;
