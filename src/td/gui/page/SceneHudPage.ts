@@ -12,7 +12,7 @@ module tb.gui.page {
             this._isModal = false;
             this._isTweenOpen = false;
             this._asset = [
-                Path.uiAtlas + "cat.atlas"
+                Path.uiAtlas + "wujiang/shuguo/guanyu/move/right.atlas"
             ];
         }
 
@@ -25,20 +25,20 @@ module tb.gui.page {
 
         protected onOpen(): void {
             super.onOpen();
-            this._viewUI.view_Cat.on(LEvent.MOUSE_DOWN, this, this.onMouseEvent);
-            this._viewUI.view_Cat.on(LEvent.MOUSE_UP, this, this.onMouseEvent);
+            this._viewUI.view_Wj.on(LEvent.MOUSE_DOWN, this, this.onMouseEvent);
+            this._viewUI.view_Wj.on(LEvent.MOUSE_UP, this, this.onMouseEvent);
             Laya.timer.frameLoop(1, this, this.update);
         }
 
         private update(): void {
             if (this._mousePoint && this._isMouseDown) {
-                let x = Laya.stage.mouseX - this._viewUI.view_Cat.width / 2;
-                let y = Laya.stage.mouseY - this._viewUI.view_Cat.height / 2;
+                let x = Laya.stage.mouseX - this._viewUI.view_Wj.width / 2;
+                let y = Laya.stage.mouseY - this._viewUI.view_Wj.height / 2;
                 this._mousePoint.x = x;
                 this._mousePoint.y = y;
                 this._mousePoint = this._viewUI.globalToLocal(this._mousePoint);
                 let p = this.getNearPoint(this._mousePoint);
-                this._viewUI.view_Cat.pos(p.x, p.y);
+                this._viewUI.view_Wj.pos(p.x, p.y);
             }
         }
 

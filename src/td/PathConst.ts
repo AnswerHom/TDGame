@@ -7,18 +7,9 @@ module td {
 		static uiAtlas: string = "res/atlas/";
 		static sfAtlas: string = "res/atlas/sf/";
 		static ui: string = "ui/";
-		static resource3D: string = "scene/3d/";
-		static sound:string = 'scene/sound/';
-		static scene_path: string = Path.resource3D + "LayaScene_baiwanyinyangshi/";
-		static skin_path: string = Path.resource3D + "LayaScene_M{0}/M{0}.lh";
-		static scene: string = Path.scene_path + "baiwanyinyangshi.ls";
-		static scene_model: string = Path.scene_path + "Assets/yeyouji/model/";
-		static scene_texture: string = Path.scene_path + "Assets/yeyouji/model/Materials/";
-		static name_texture: string = Path.scene_path + "Assets/AINames/";
-		static icon: string = "scene/icon/";
-		static custom_atlas: string = "effect_xl/custom_atlas/";
-		static mathSprite3D: string = Path.resource3D + "LayaScene_math/math.lh";
-
+		static sound: string = 'scene/sound/';
+		static atlas_wj = "res/atlas/wujiang/";
+		static scene_wj = "wujiang/"
 
 
 		/**

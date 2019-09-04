@@ -9,19 +9,19 @@ var ui;
 (function (ui) {
     var component;
     (function (component) {
-        var SceneCatUI = (function (_super) {
-            __extends(SceneCatUI, _super);
-            function SceneCatUI() {
+        var SceneWJUI = (function (_super) {
+            __extends(SceneWJUI, _super);
+            function SceneWJUI() {
                 return _super.call(this) || this;
             }
-            SceneCatUI.prototype.createChildren = function () {
+            SceneWJUI.prototype.createChildren = function () {
                 _super.prototype.createChildren.call(this);
-                this.createView(ui.component.SceneCatUI.uiView);
+                this.createView(ui.component.SceneWJUI.uiView);
             };
-            return SceneCatUI;
+            return SceneWJUI;
         }(View));
-        SceneCatUI.uiView = { "type": "View", "props": { "width": 100, "height": 100 }, "child": [{ "type": "Image", "props": { "var": "image_Cat", "skin": "cat/cat1.png", "centerX": 0, "bottom": 0 } }] };
-        component.SceneCatUI = SceneCatUI;
+        SceneWJUI.uiView = { "type": "View", "props": { "width": 48, "height": 64 }, "child": [{ "type": "Image", "props": { "y": 0, "x": 0, "width": 48, "var": "image_Cat", "skin": "wujiang/shuguo/guanyu/move/right/1.png", "height": 64 } }] };
+        component.SceneWJUI = SceneWJUI;
     })(component = ui.component || (ui.component = {}));
 })(ui || (ui = {}));
 (function (ui) {
@@ -61,13 +61,13 @@ var ui;
             return _super.call(this) || this;
         }
         Scene1UI.prototype.createChildren = function () {
-            View.regComponent("ui.component.SceneCatUI", ui.component.SceneCatUI);
+            View.regComponent("ui.component.SceneWJUI", ui.component.SceneWJUI);
             _super.prototype.createChildren.call(this);
             this.createView(ui.Scene1UI.uiView);
         };
         return Scene1UI;
     }(View));
-    Scene1UI.uiView = { "type": "View", "props": { "width": 1280, "height": 720 }, "child": [{ "type": "Box", "props": { "y": 0.5, "x": 0.5, "var": "box_BG" }, "child": [{ "type": "Line", "props": { "y": 600, "x": 0, "toY": 0, "toX": 1280, "lineWidth": 5, "lineColor": "#ff0000" } }, { "type": "Line", "props": { "y": 100, "x": 0, "toY": 0, "toX": 1280, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 200, "x": 0, "toY": 0, "toX": 1280, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 300, "x": 0, "toY": 0, "toX": 1280, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 400, "x": 0, "toY": 0, "toX": 1280, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 500, "x": 0, "toY": 0, "toX": 1280, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 40, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 1240, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 149, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 258, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 367, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 476, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 585, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 695, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 804, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 913, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 1022, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 1131, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }] }, { "type": "SceneCat", "props": { "y": 619, "x": 28, "var": "view_Cat", "runtime": "ui.component.SceneCatUI" } }] };
+    Scene1UI.uiView = { "type": "View", "props": { "width": 1280, "height": 720 }, "child": [{ "type": "Box", "props": { "y": 0.5, "x": 0.5, "var": "box_BG" }, "child": [{ "type": "Line", "props": { "y": 600, "x": 0, "toY": 0, "toX": 1280, "lineWidth": 5, "lineColor": "#ff0000" } }, { "type": "Line", "props": { "y": 100, "x": 0, "toY": 0, "toX": 1280, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 200, "x": 0, "toY": 0, "toX": 1280, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 300, "x": 0, "toY": 0, "toX": 1280, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 400, "x": 0, "toY": 0, "toX": 1280, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 500, "x": 0, "toY": 0, "toX": 1280, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 40, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 1240, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 149, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 258, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 367, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 476, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 585, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 695, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 804, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 913, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 1022, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }, { "type": "Line", "props": { "y": 100, "x": 1131, "toY": 500, "lineWidth": 5, "lineColor": "#00ff00" } }] }, { "type": "SceneWJ", "props": { "y": 582, "x": 8, "var": "view_Wj", "scaleY": 2, "scaleX": 2, "runtime": "ui.component.SceneWJUI" } }] };
     ui.Scene1UI = Scene1UI;
 })(ui || (ui = {}));
 //# sourceMappingURL=layaUI.max.all.js.map

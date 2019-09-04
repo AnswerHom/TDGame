@@ -31,6 +31,7 @@ module td {
             super();
             this._app = app;
             this._gridArr = [];
+            let obj = new AvatarObject(new BaseObject());
         }
 
         /**
@@ -54,10 +55,6 @@ module td {
                     this._gridArr.push(p);
                 }
             }
-        }
-
-        addCat(index: number, cat: BaseCat) {
-
         }
     }
 }

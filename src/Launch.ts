@@ -25,7 +25,9 @@ import StringU = td.utils.StringU;
 import MathU = td.utils.MathU;
 import ObjectPools = td.utils.ObjectPools;
 
-import BaseCat = td.object.BaseCat;
+import BaseObject = td.object.BaseObject;
+
+import AvatarObject = td.scene.AvatarObject;
 
 var onIPhoneX: boolean = false;
 var isDebug: boolean = true;

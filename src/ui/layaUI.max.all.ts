@@ -2,15 +2,15 @@
 import View=laya.ui.View;
 import Dialog=laya.ui.Dialog;
 module ui.component {
-    export class SceneCatUI extends View {
+    export class SceneWJUI extends View {
 		public image_Cat:Laya.Image;
 
-        public static  uiView:any ={"type":"View","props":{"width":100,"height":100},"child":[{"type":"Image","props":{"var":"image_Cat","skin":"cat/cat1.png","centerX":0,"bottom":0}}]};
+        public static  uiView:any ={"type":"View","props":{"width":48,"height":64},"child":[{"type":"Image","props":{"y":0,"x":0,"width":48,"var":"image_Cat","skin":"wujiang/shuguo/guanyu/move/right/1.png","height":64}}]};
         constructor(){ super()}
         createChildren():void {
         
             super.createChildren();
-            this.createView(ui.component.SceneCatUI.uiView);
+            this.createView(ui.component.SceneWJUI.uiView);
 
         }
 
@@ -55,12 +55,12 @@ module ui {
 module ui {
     export class Scene1UI extends View {
 		public box_BG:Laya.Box;
-		public view_Cat:ui.component.SceneCatUI;
+		public view_Wj:ui.component.SceneWJUI;
 
-        public static  uiView:any ={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Box","props":{"y":0.5,"x":0.5,"var":"box_BG"},"child":[{"type":"Line","props":{"y":600,"x":0,"toY":0,"toX":1280,"lineWidth":5,"lineColor":"#ff0000"}},{"type":"Line","props":{"y":100,"x":0,"toY":0,"toX":1280,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":200,"x":0,"toY":0,"toX":1280,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":300,"x":0,"toY":0,"toX":1280,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":400,"x":0,"toY":0,"toX":1280,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":500,"x":0,"toY":0,"toX":1280,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":40,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":1240,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":149,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":258,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":367,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":476,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":585,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":695,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":804,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":913,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":1022,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":1131,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}}]},{"type":"SceneCat","props":{"y":619,"x":28,"var":"view_Cat","runtime":"ui.component.SceneCatUI"}}]};
+        public static  uiView:any ={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Box","props":{"y":0.5,"x":0.5,"var":"box_BG"},"child":[{"type":"Line","props":{"y":600,"x":0,"toY":0,"toX":1280,"lineWidth":5,"lineColor":"#ff0000"}},{"type":"Line","props":{"y":100,"x":0,"toY":0,"toX":1280,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":200,"x":0,"toY":0,"toX":1280,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":300,"x":0,"toY":0,"toX":1280,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":400,"x":0,"toY":0,"toX":1280,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":500,"x":0,"toY":0,"toX":1280,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":40,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":1240,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":149,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":258,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":367,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":476,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":585,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":695,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":804,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":913,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":1022,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}},{"type":"Line","props":{"y":100,"x":1131,"toY":500,"lineWidth":5,"lineColor":"#00ff00"}}]},{"type":"SceneWJ","props":{"y":582,"x":8,"var":"view_Wj","scaleY":2,"scaleX":2,"runtime":"ui.component.SceneWJUI"}}]};
         constructor(){ super()}
         createChildren():void {
-        			View.regComponent("ui.component.SceneCatUI",ui.component.SceneCatUI);
+        			View.regComponent("ui.component.SceneWJUI",ui.component.SceneWJUI);
 
             super.createChildren();
             this.createView(ui.Scene1UI.uiView);

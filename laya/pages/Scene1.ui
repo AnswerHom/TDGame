@@ -244,10 +244,10 @@
         {
             "x":15,
             "type":"UIView",
-            "source":"component/SceneCat.ui",
-            "props":{"y":619,"x":28,"var":"view_Cat"},
+            "source":"component/SceneWJ.ui",
+            "props":{"y":582,"x":8,"var":"view_Wj","scaleY":2,"scaleX":2},
             "nodeParent":1,
-            "label":"UIView(view_Cat)",
+            "label":"UIView(view_Wj)",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
