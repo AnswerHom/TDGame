@@ -77,6 +77,7 @@ class GameApp {
     // 心跳更新
     onUpdate(diff: number): void {
         this._uiRoot && this._uiRoot.update(diff);
+        this._sceneRoot && this._sceneRoot.update(diff);
     }
 
 

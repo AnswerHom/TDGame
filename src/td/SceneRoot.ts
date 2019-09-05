@@ -10,50 +10,39 @@ module td {
         get gameState() {
             return this._gameState;
         }
+        set gameState(v: number) {
+            this._gameState = v;
+        }
         private _app: GameApp;
-        //网格位置数组
-        private _gridArr: Point[];
-        get gridArr() {
-            return this._gridArr;
+        //绘制对象
+        private _avatars: AvatarObject[];
+        get avatars() {
+            return this._avatars;
         }
-        //网格宽度
-        private _gridWidth: number = 0;
-        //网格高度
-        private _gridHeight: number = 0;
-        get gridWidth() {
-            return this._gridWidth;
-        }
-        get gridHeight() {
-            return this._gridHeight;
-        }
+        //层
+        private _avatarLayer: Sprite;
 
         constructor(app: GameApp) {
             super();
             this._app = app;
-            this._gridArr = [];
-            let obj = new AvatarObject(new BaseObject());
+            this._avatars = [];
+            for (let i = 0; i < 10; i++) {
+                let obj = new BaseObject(this);
+                obj.x = MathU.randomRange(100, 500);
+                obj.y = MathU.randomRange(100, 300);
+                this._avatars.push(new AvatarObject(obj));
+            }
+            this._avatarLayer = new Sprite();
+            this.addChild(this._avatarLayer);
         }
 
-        /**
-         * 初始化场景网格
-         * @param startX 起始X
-         * @param startY 起始Y
-         * @param endX 结束Y
-         * @param endY 结束Y
-         * @param row 多少行
-         * @param col 多少列
-         */
-        initScene(startX: number, startY: number, endX: number, endY: number, row: number, col: number) {
-            this._gridArr = [];
-            this._gridWidth = (endX - startX) / col;
-            this._gridHeight = (endY - startY) / row;
-            for (let i = 0; i < row; i++) {
-                for (let j = 0; j < col; j++) {
-                    let x = startX + this._gridWidth * j;
-                    let y = startY + this._gridHeight * i;
-                    let p = new Point(x, y);
-                    this._gridArr.push(p);
-                }
+        update(diff: number) {
+            if (this._gameState != SceneRoot.STATE_START) return;
+            this._avatarLayer.graphics.clear();
+            let len = this._avatars.length;
+            for (let i = 0; i < len; i++) {
+                let avatar = this._avatars[i];
+                avatar.onDraw(diff, this._avatarLayer.graphics);
             }
         }
     }

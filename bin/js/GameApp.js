@@ -68,6 +68,7 @@ var GameApp = (function () {
     // 心跳更新
     GameApp.prototype.onUpdate = function (diff) {
         this._uiRoot && this._uiRoot.update(diff);
+        this._sceneRoot && this._sceneRoot.update(diff);
     };
     /**
      * 根据时间戳获取本周一日期

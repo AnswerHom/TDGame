@@ -26,8 +26,8 @@ module tb.gui.page {
         }
 
         private onClick(e: LEvent) {
-            this._app.sceneRoot.initScene(40, 100, 1240, 600, 5, 11);
             this._app.uiRoot.HUD.open(PageDef.SCENE_HUD);
+            this._app.sceneRoot.gameState = SceneRoot.STATE_START;
             this.close();
         }
 

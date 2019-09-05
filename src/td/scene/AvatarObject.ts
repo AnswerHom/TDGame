@@ -1,21 +1,19 @@
-module td.scene {
-    // 动作
-    const ACTION_MOVE = 1;
-    const ACTION_ATTACK = 2;
-    const ACTION_DEAD = 3;
+// 动作
+const ACTION_MOVE = 1;
+const ACTION_ATTACK = 2;
+const ACTION_DEAD = 3;
+//方向
+const TOWARD_TOP = 1;
+const TOWARD_BOTTOM = 2;
+const TOWARD_LEFT = 3;
+const TOWARD_RIGHT = 4;
 
+module td.scene {
     const ACTION = {
         1: 'move',
         2: 'attack',
         3: 'dead',
     }
-
-    //方向
-    const TOWARD_TOP = 1;
-    const TOWARD_BOTTOM = 2;
-    const TOWARD_LEFT = 3;
-    const TOWARD_RIGHT = 4;
-
     const TOWARD = {
         1: 'top',
         2: 'bottom',
@@ -26,18 +24,46 @@ module td.scene {
     //视图对象
     export class AvatarObject {
         private _object: BaseObject;
+        get object(): BaseObject {
+            return this._object;
+        }
         // 素材 {key: {top: ,bttom: ,left: , right: }}
-        private _assets: { [key: number]: any } = {};
+        private _assets: { [key: number]: any } = null;
         /*帧率*/
         private _frameRate: number = 24;
-        // 动画当前帧
+        /**动画当前帧 */
         private _frameCurIdx: number = 0;
         /*帧时间 帧/ms*/
         private _frameTime: number = 0;
+        /**帧数 */
+        private _frameCount: number = 0;
+        /**最后一帧 */
+        private _frameLastIdx: number = 0;
+        /**总时间 */
+        private _totalTime: number = 0;
+        /**运行时间 */
+        private _runTime: number = 0;
+        /**当前动作 */
+        private _action: number = ACTION_MOVE;
+        /**当前方向 */
+        private _toward: number = TOWARD_RIGHT;
+        // 速度
+        protected _animationSpeed: number = 1.0;
+        get animationSpeed(): number {
+            return this._animationSpeed;
+        }
+        set animationSpeed(value: number) {
+            this._animationSpeed = value;
+            this._frameTime = 1000 / (this._frameRate * value);
+            this._totalTime = this._frameCount * this._frameTime;
+        }
+        /**是否重新计算 */
+        private _isCalDrawInfo: boolean = true;
+        private _loop: boolean = true;
 
         constructor(obj: BaseObject) {
             this._object = obj;
-            this._frameTime = 1000 / this._frameRate;
+            this._runTime = 0;
             this.loadTexture();
         }
 
@@ -118,8 +144,59 @@ module td.scene {
             return textures;
         }
 
-        onDraw(g: Graphics) {
-            
+        onDraw(diff: number, g: Graphics) {
+            if (!this._object || !this._assets || this._object.isDied) return;
+            this._runTime += diff;
+            this._object.update(diff);
+            //判断动作变化
+            if (this._action != this._object.action || this._toward != this._object.toward) {
+                this._isCalDrawInfo = true;
+            }
+            if (this._isCalDrawInfo)
+                this.drawInfoCalculate();
+            else
+                this._frameCurIdx = this.getCurrentIdx();
+            let texture = this._textures[this._frameCurIdx];
+            if (texture) {
+                g.drawTexture(texture, this._object.x, this._object.y, texture.width, texture.height);
+            }
+        }
+
+        private _textures: Texture[];//当前纹理集合
+        private drawInfoCalculate(): void {
+            this._isCalDrawInfo = false;
+            this._textures = [];
+            this._action = this._object.action;
+            this._toward = this._object.toward;
+            switch (this._action) {
+                case ACTION_MOVE:
+                case ACTION_ATTACK:
+                    this._textures = this._assets[this._action][this._toward];
+                    break;
+                case ACTION_DEAD:
+                    this._textures = this._assets[this._action];
+                    break;
+            }
+            this._runTime = 0;
+            this._frameCount = this._textures.length;
+            this._frameLastIdx = this._textures.length - 1;
+            this.animationSpeed = 0.5;
+            this._frameCurIdx = 0;
+            this._loop = this._action == ACTION_MOVE || this._action == ACTION_ATTACK;
+        }
+
+        private getCurrentIdx(): number {
+            if (this._loop || this._runTime < this._totalTime) {
+                //获得无限完整动画循环之后剩余的时间
+                var frameYu: number = this._runTime % this._totalTime;
+                //定位到帧位置
+                var idx: number = Math.floor(frameYu / this._frameTime);
+                if (idx >= this._frameCount)
+                    return this._frameLastIdx;
+                return idx;
+            }
+            // 最后一帧
+            return this._frameLastIdx;
         }
     }
 }
