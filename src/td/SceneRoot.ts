@@ -6,6 +6,11 @@ module td {
         public static STATE_NONE: number = 0;//无
         public static STATE_START: number = 1;//开始
         public static STATE_OVER: number = 2;//结束
+        /*摄像机*/
+        public camera: Camera;
+        // 摄像机焦点对象
+        cameraFocus: Vector2;
+
         private _gameState: number = 0;
         get gameState() {
             return this._gameState;
@@ -26,12 +31,6 @@ module td {
             super();
             this._app = app;
             this._avatars = [];
-            for (let i = 0; i < 10; i++) {
-                let obj = new BaseObject(this);
-                obj.x = MathU.randomRange(100, 500);
-                obj.y = MathU.randomRange(100, 300);
-                this._avatars.push(new AvatarObject(obj));
-            }
             this._avatarLayer = new Sprite();
             this.addChild(this._avatarLayer);
         }

@@ -33,12 +33,47 @@ class GameApp {
     get uiRoot(): UIRoot {
         return this._uiRoot;
     }
-    // ui
+    // 场景
     protected _sceneRoot: SceneRoot;
     get sceneRoot(): SceneRoot {
         return this._sceneRoot;
     }
 
+    // 事件管理器
+    private _eventManager: EventManager;
+    get eventManager(): EventManager {
+        if (!this._eventManager) {
+            this._eventManager = new EventManager();
+        }
+        return this._eventManager;
+    }
+
+    // 地图管理器
+    private _mapManager: MapManager
+    get mapManager(): MapManager {
+        if (!this._mapManager) {
+            this._mapManager = new MapManager(this);
+            this._mapManager.init();
+        }
+        return this._mapManager;
+    }
+
+    // 时间同步 
+    private _sync: Sync;
+    get sync(): Sync {
+        if (!this._sync) {
+            this._sync = new Sync(this);
+        }
+        return this._sync;
+    }
+
+    /**
+    * 主玩家
+    */
+    private _mainPlayer: Player;
+    get mainPlayer() {
+        return this._mainPlayer;
+    }
 
     private _blackBorder: BlackBorder;
 

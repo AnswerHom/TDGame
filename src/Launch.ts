@@ -13,6 +13,7 @@ import Graphics = Laya.Graphics;
 import Loader = Laya.Loader;
 import Handler = Laya.Handler;
 import Label = Laya.Label;
+import Matrix = Laya.Matrix;
 
 import Page = td.gui.base.Page;
 
@@ -24,10 +25,31 @@ import BlackBorder = td.BlackBorder;
 import StringU = td.utils.StringU;
 import MathU = td.utils.MathU;
 import ObjectPools = td.utils.ObjectPools;
+import Vector2 = td.utils.Vector2;
+import Sync = td.utils.Sync;
 
 import BaseObject = td.object.BaseObject;
+import Map = td.object.Map;
+import MapMain = td.object.MapMain;
+import Unit = td.object.Unit;
+import Player = td.object.Player;
 
 import AvatarObject = td.scene.AvatarObject;
+import AvatarBase = td.scene.AvatarBase;
+import SceneRes = td.scene.SceneRes;
+import Shock = td.scene.Shock;
+import Camera = td.scene.Camera;
+
+import EventManager = td.managers.EventManager;
+import ActionManager = td.managers.ActionManager;
+import ActionBase = td.managers.actions.ActionBase;
+import MapManager = td.managers.MapManager;
+
+import IMapConf = td.data.IMapConf;
+import IKeyPointData = td.data.IKeyPointData;
+import TrunkPoint = td.data.TrunkPoint;
+import TrunkPath = td.data.TrunkPath;
+import Tiled = td.data.Tiled;
 
 var onIPhoneX: boolean = false;
 var isDebug: boolean = true;
